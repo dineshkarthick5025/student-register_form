@@ -110,7 +110,7 @@ function App() {
             </div>
             {/* QR Code is ALWAYS visible in the form */}
             <div className="qr-code-container">
-              <p>Scan this QR code to make payment:</p>
+              <p>Scan this QR code to make payment(workshop): (send with your name)</p>
               <img src={qrCodeImage} alt="Payment QR Code" className="qr-code" />
             </div>
           </div>
