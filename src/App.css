@@ -1,26 +1,9 @@
 /* src/App.css */
-:root {
-  --primary-color: #3498db;
-  --secondary-color: #2980b9;
-  --success-color: #2ecc71;
-  --danger-color: #e74c3c;
-  --light-color: #ecf0f1;
-  --dark-color: #34495e;
-  --text-color: #2c3e50;
-  --border-color: #bdc3c7;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-  background-color: #f5f7fa;
-  color: var(--text-color);
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
 }
 
 .app-container {
@@ -29,36 +12,57 @@ body {
   padding: 20px;
 }
 
-h1, h2 {
-  color: var(--dark-color);
-  margin-bottom: 20px;
+h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  background: linear-gradient(to right, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
 }
 
-.form-container {
+h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.form-container, .table-container {
   background: white;
+  border-radius: 10px;
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .form-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
+  color: #2c3e50;
 }
 
-.form-group input[type="text"] {
+input[type="text"] {
   width: 100%;
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
   font-size: 16px;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .radio-group {
@@ -70,34 +74,58 @@ h1, h2 {
 .radio-group label {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   font-weight: normal;
   cursor: pointer;
 }
 
+input[type="radio"] {
+  accent-color: #3498db;
+  transform: scale(1.2);
+}
+
+.qr-code-container {
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #3498db;
+}
+
+.qr-code-container p {
+  margin-bottom: 10px;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.qr-code {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
 .submit-btn {
-  background-color: var(--primary-color);
+  background: linear-gradient(to right, #3498db, #9b59b6);
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 12px 25px;
   font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
   font-weight: 600;
+  transition: all 0.3s;
+  display: block;
   width: 100%;
-  transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
 .submit-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.table-container {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 table {
@@ -106,99 +134,48 @@ table {
   margin-top: 20px;
 }
 
-th, td {
-  padding: 12px 15px;
+th {
+  background: linear-gradient(to right, #3498db, #9b59b6);
+  color: white;
+  padding: 12px;
   text-align: left;
-  border-bottom: 1px solid var(--border-color);
 }
 
-th {
-  background-color: var(--light-color);
-  font-weight: 600;
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
 }
 
 tr:hover {
-  background-color: rgba(52, 152, 219, 0.1);
+  background-color: #e8f4fc;
 }
 
 .paid {
-  color: var(--success-color);
+  color: #27ae60;
   font-weight: 600;
 }
 
 .not-paid {
-  color: var(--danger-color);
+  color: #e74c3c;
   font-weight: 600;
 }
 
-/* Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
-  .app-container {
-    padding: 15px;
-  }
-  
   .form-container, .table-container {
     padding: 15px;
   }
   
-  th, td {
-    padding: 8px 10px;
-    font-size: 14px;
+  h1 {
+    font-size: 2rem;
   }
-}
-
-@media (max-width: 480px) {
+  
   .radio-group {
     flex-direction: column;
     gap: 10px;
   }
-  
-  th, td {
-    padding: 6px 8px;
-    font-size: 13px;
-  }
-}
-
-
-
-/* Add these to your existing App.css */
-.qr-code-container {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px dashed #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.qr-code {
-  width: 200px;
-  height: 200px;
-  margin-top: 10px;
-}
-
-.small-qr {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.qr-code-hint {
-  display: inline-block;
-  position: relative;
-}
-
-.qr-code-hint:hover::after {
-  content: "Scan to pay workshop fee";
-  position: absolute;
-  background: #333;
-  color: white;
-  padding: 5px;
-  border-radius: 3px;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 10;
 }
