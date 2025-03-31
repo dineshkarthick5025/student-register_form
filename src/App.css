@@ -1,6 +1,4 @@
 /* src/App.css */
-
-/* Base Styles */
 :root {
   --primary-color: #4361ee;
   --secondary-color: #3f37c9;
@@ -54,6 +52,14 @@ h1, h2 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
 h1::after, h2::after {
   content: '';
   display: block;
@@ -64,15 +70,13 @@ h1::after, h2::after {
   border-radius: 2px;
 }
 
-/* Form Styles */
 .form-container {
-  background: white;
+  background: linear-gradient(to bottom right, white 0%, #f8f9fa 100%);
   padding: 25px;
   border-radius: 10px;
   box-shadow: var(--shadow);
   margin-bottom: 30px;
   transition: var(--transition);
-  background: linear-gradient(to bottom right, white 0%, #f8f9fa 100%);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -156,7 +160,6 @@ h1::after, h2::after {
   transform: translate(-50%, -50%);
 }
 
-/* QR Code Styles */
 .qr-code-container {
   margin-top: 20px;
   padding: 15px;
@@ -192,7 +195,6 @@ h1::after, h2::after {
   transform: scale(1.05);
 }
 
-/* Button Styles */
 .submit-btn {
   background: var(--gradient-primary);
   color: white;
@@ -216,7 +218,6 @@ h1::after, h2::after {
   transform: translateY(0);
 }
 
-/* Table Styles */
 .table-container {
   background: linear-gradient(to bottom right, white 0%, #f8f9fa 100%);
   padding: 25px;
@@ -226,11 +227,17 @@ h1::after, h2::after {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   animation: fadeIn 0.8s ease-in-out;
+  min-width: 600px;
 }
 
 th, td {
@@ -270,7 +277,6 @@ tr:hover {
   font-weight: 700;
 }
 
-/* Floating Action Button */
 .floating-btn {
   position: fixed;
   bottom: 30px;
@@ -303,18 +309,26 @@ tr:hover {
   transform: scale(1.1);
 }
 
-/* Responsive Design */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .app-container {
     padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
   }
   
   .form-container, .table-container {
     padding: 15px;
   }
   
-  th, td {
-    padding: 8px 10px;
+  .form-group input[type="text"] {
+    padding: 10px;
     font-size: 14px;
   }
   
@@ -325,6 +339,16 @@ tr:hover {
   
   .qr-code {
     max-width: 150px;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 8px 10px;
+    font-size: 14px;
   }
   
   .floating-btn {
@@ -338,19 +362,15 @@ tr:hover {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 24px;
+    font-size: 1.3rem;
   }
   
   h2 {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
   
-  .form-group input[type="text"] {
-    padding: 10px;
-  }
-  
-  .submit-btn {
-    padding: 10px;
+  .form-container {
+    padding: 15px 10px;
   }
   
   .qr-code-container {
@@ -359,5 +379,22 @@ tr:hover {
   
   .qr-code {
     max-width: 120px;
+  }
+  
+  .table-container {
+    padding: 15px 5px;
+  }
+  
+  th, td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    bottom: 15px;
+    right: 15px;
   }
 }
