@@ -151,7 +151,7 @@ function App() {
               <th>Name</th>
               <th>Reg No.</th>
               <th>Workshop Paid</th>
-              <th>Sem Fee Paid</th>
+              <th>Sem Fee Paid proof submitted</th>
             </tr>
           </thead>
           <tbody>
